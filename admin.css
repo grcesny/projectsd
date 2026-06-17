@@ -1,0 +1,343 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+}
+
+/*HALAMAN LOGIN ADMIN */
+.login-box {
+  width: 350px;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  margin: 120px auto;
+}
+
+.login-box h2 {
+  text-align: center;
+  color: #0b7a31;
+  margin-bottom: 30px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  background: #0b7a31;
+  color: white;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-box button:hover {
+  background: #096127;
+}
+
+/*STRUKTUR UTAMA DASHBOARD ADMIN (PENTING!)*/
+.admin-container {
+  display: flex;            /* Membuat sidebar (kiri) dan konten (kanan) berjejer */
+  min-height: 100vh;
+  width: 100%;
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+}
+
+/* SIDEBAR PANEL (KIRI) */
+.sidebar {
+  width: 260px;
+  min-width: 260px;         /* Mengunci lebar sidebar agar tidak gepeng */
+  background: #0b7a31;      /* Warna hijau serasi dengan tema sekolah */
+  color: white;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;   /* Menu berjejer tegak lurus ke bawah */
+  gap: 8px;                 /* Jarak antar tombol menu */
+}
+
+.sidebar h2 {
+  text-align: center;
+  font-size: 22px;
+  margin: 0 0 30px 0;
+  color: #fff;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 15px;
+}
+
+.sidebar a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  display: block;           /* Membuat tombol link penuh memenuhi sidebar */
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+/* EFEK HOVER & MENU AKTIF */
+.sidebar a:hover,
+.sidebar a.active {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  padding-left: 25px;       /* Efek animasi bergeser sedikit ke kanan */
+}
+
+/* AREA KONTEN UTAMA (KANAN) */
+.admin-content {
+  flex: 1;                  /* Membuka ruang konten selebar sisa layar kanan */
+  padding: 40px;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+}
+
+.admin-content h1 {
+  font-size: 28px;
+  color: #333;
+  margin: 0 0 30px 0;
+}
+
+/*KOMPONEN KARTU MENU (CARDS)*/
+.admin-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Membagi menjadi 3 kolom kartu sejajar */
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.admin-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+  border-left: 5px solid #0b7a31; /* Garis aksen hijau tebal di kiri kartu */
+}
+
+.admin-card h3 {
+  margin: 0 0 10px 0;
+  color: #0b7a31;
+  font-size: 20px;
+}
+
+.admin-card p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+/*TABEL DATA BERITA & TOMBOL AKSI*/
+.table-berita {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.table-berita th, 
+.table-berita td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.table-berita th {
+  background-color: #0b7a31;
+  color: white;
+  font-weight: bold;
+}
+
+.edit-btn {
+  background: #ffaa00;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+.hapus-btn {
+  background: #ff4d4d;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.table-berita td {
+  word-break: break-word;
+}
+
+/*HALAMAN GALERI ADMIN*/
+.galeri-page {
+  padding: 120px 5%;
+}
+
+.galeri-page h1 {
+  text-align: center;
+  font-size: 65px;
+  color: #0b7a31;
+  margin-bottom: 70px;
+}
+
+.galeri-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 35px;
+}
+
+.galeri-card {
+  text-align: center;
+}
+
+.galeri-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 25px;
+  transition: 0.3s;
+}
+
+.galeri-card img:hover {
+  transform: scale(1.03);
+}
+
+.galeri-card h3 {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.galeri-btn {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.mini-page {
+  width: 100%;
+  max-width: 600px; /* Membatasi lebar form agar rapi di tengah seperti style.css */
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  margin: 50px auto; /* Membuat kotak berada di tengah layar */
+  box-sizing: border-box;
+}
+
+.mini-page h2 {
+  color: #0b7a31;
+  margin-bottom: 25px;
+  font-size: 24px;
+  text-align: center; /* Membuat judul "Tambah Berita" berada di tengah kotak */
+}
+
+/* Mengatur Input & Textarea di dalam Form */
+.mini-page input[type="text"],
+.mini-page textarea,
+.mini-page input[type="file"] {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+.mini-page textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.aksi-form {
+  display: flex;
+  justify-content: flex-end; /* Menggeser posisi ke kanan */
+  align-items: center;
+  gap: 12px;                 /* Jarak antar tombol Batal & Simpan */
+  margin-top: 25px;
+  width: 100%;
+}
+
+/* TOMBOL UTAMA (SIMPAN BERITA) */
+.btn-simpan {
+  width: auto;               /* Ukuran otomatis mengecil mengikuti teks */
+  padding: 10px 24px;        /* Membuat tombol menjadi kotak proporsional */
+  border: none;
+  background: #0b7a31;       /* Hijau */
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-simpan:hover {
+  background: #096127;
+}
+
+/* TOMBOL BATAL (Disamakan bentuk, ukuran, dan warna hijaunya) */
+.btn-kembali-bawah {
+  display: inline-block;     /* Agar padding dan auto-width berfungsi */
+  text-align: center;
+  text-decoration: none;     /* Menghilangkan garis bawah default link */
+  width: auto;               /* Ukuran otomatis mengecil mengikuti teks */
+  padding: 10px 24px;        /* Tinggi & lebar padding sama persis dengan Simpan */
+  background: #0b7a31;       /* Diubah dari merah menjadi Hijau sesuai keinginanmu */
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: background 0.2s ease;
+}
+
+.btn-kembali-bawah:hover {
+  background: #096127;       /* Efek hover hijau gelap */
+}
+
+/* RESPONSIVE DESIGN (UNTUK SMARTPHONE/TABLET)*/
+@media(max-width: 768px) {
+  .admin-container {
+    flex-direction: column; /* Berubah menumpuk atas bawah saat dibuka di HP */
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .admin-content {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .admin-cards {
+    grid-template-columns: 1fr; /* Kartu menu menjadi 1 kolom penuh di HP */
+  }
+
+  .table-berita {
+    display: block;
+    overflow-x: auto; /* Tabel bisa digeser ke kanan-kiri di layar kecil */
+  }
+}
